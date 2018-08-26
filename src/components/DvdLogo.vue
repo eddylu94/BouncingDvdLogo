@@ -1,15 +1,18 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div v-bind:style="dvdLogoStyle">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'DvdLogo',
   data () {
     return {
-      msg: 'Hello World!'
+      dvdLogoStyle: {
+        width: '150px',
+        height: '100px',
+        backgroundColor: '#0000FF'
+      }
     }
   }
 }
