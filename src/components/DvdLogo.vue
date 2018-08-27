@@ -1,5 +1,6 @@
 <template>
   <div v-bind:style="dvdLogoStyle">
+    <img src="@/assets/dvd_logo.png/" v-bind:style="dvdLogoImageStyle" />
   </div>
 </template>
 
@@ -21,10 +22,17 @@ export default {
   data () {
     return {
       dvdLogoStyle: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: `${DVD_LOGO_WIDTH}px`,
         height: `${DVD_LOGO_HEIGHT}px`,
         backgroundColor: `rgb(0, 0, 255)`,
         transform: 'translate(0px, 0px)'
+      },
+      dvdLogoImageStyle: {
+        width: `${DVD_LOGO_WIDTH - 20}px`,
+        height: `${DVD_LOGO_HEIGHT - 20}px`
       }
     }
   },
