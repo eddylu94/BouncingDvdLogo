@@ -7,6 +7,14 @@
 const DVD_LOGO_WIDTH = 150
 const DVD_LOGO_HEIGHT = 100
 
+var rand = (max) => {
+  return Math.floor(Math.random() * max)
+}
+
+var randColor = () => {
+  return `rgb(${rand(256)}, ${rand(256)}, ${rand(256)})`
+}
+
 export default {
   name: 'DvdLogo',
   props: ['dvdLogoProps'],
@@ -15,7 +23,7 @@ export default {
       dvdLogoStyle: {
         width: `${DVD_LOGO_WIDTH}px`,
         height: `${DVD_LOGO_HEIGHT}px`,
-        backgroundColor: '#0000FF',
+        backgroundColor: `rgb(0, 0, 255)`,
         transform: 'translate(0px, 0px)'
       }
     }
@@ -45,9 +53,11 @@ export default {
       }
       if (isHorizontalBoundary) {
         changeX *= -1
+        this.dvdLogoStyle.backgroundColor = randColor()
       }
       if (isVerticalBounday) {
         changeY *= -1
+        this.dvdLogoStyle.backgroundColor = randColor()
       }
 
       this.dvdLogoStyle.transform = `translate(${this.posX}px, ${this.posY}px)`
