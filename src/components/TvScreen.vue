@@ -1,13 +1,16 @@
 <template>
   <div v-bind:style="tvScreenContainerStyle">
     <div v-bind:style="tvScreenStyle">
-      <dvdlogo></dvdlogo>
+      <dvdlogo v-bind:dvdLogoProps="dvdLogoProps"></dvdlogo>
     </div>
   </div>
 </template>
 
 <script>
 import DvdLogo from './DvdLogo.vue'
+
+const TV_SCREEN_WIDTH = 800
+const TV_SCREEN_HEIGHT = 400
 
 export default {
   name: 'TvScreen',
@@ -25,8 +28,12 @@ export default {
       },
       tvScreenStyle: {
         backgroundColor: '#181818',
-        width: '800px',
-        height: '400px'
+        width: `${TV_SCREEN_WIDTH}px`,
+        height: `${TV_SCREEN_HEIGHT}px`
+      },
+      dvdLogoProps: {
+        tvScreenWidth: TV_SCREEN_WIDTH,
+        tvScreenHeight: TV_SCREEN_HEIGHT
       }
     }
   }

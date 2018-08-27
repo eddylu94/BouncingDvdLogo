@@ -4,13 +4,17 @@
 </template>
 
 <script>
+const DVD_LOGO_WIDTH = 150
+const DVD_LOGO_HEIGHT = 100
+
 export default {
   name: 'DvdLogo',
+  props: ['dvdLogoProps'],
   data () {
     return {
       dvdLogoStyle: {
-        width: '150px',
-        height: '100px',
+        width: `${DVD_LOGO_WIDTH}px`,
+        height: `${DVD_LOGO_HEIGHT}px`,
         backgroundColor: '#0000FF',
         transform: 'translate(0px, 0px)'
       }
@@ -23,20 +27,19 @@ export default {
     var changeYMag = 1
     var changeX = changeXMag
     var changeY = changeYMag
-    var distance = 0;
 
     var interval = setInterval(() => {
       this.posX += changeX
       this.posY += changeY
 
-      var isRight = this.posX >= 800 - 150
+      var isRight = this.posX >= this.dvdLogoProps.tvScreenWidth - DVD_LOGO_WIDTH
       var isLeft = this.posX <= 0
       var isTop = this.posY <= 0
-      var isBottom = this.posY >= 400 - 100
+      var isBottom = this.posY >= this.dvdLogoProps.tvScreenHeight - DVD_LOGO_HEIGHT
 
       var isHorizontalBoundary = isLeft || isRight
       var isVerticalBounday = isTop || isBottom
-      
+
       if (isHorizontalBoundary && isVerticalBounday) {
         clearInterval(interval)
       }
@@ -46,7 +49,7 @@ export default {
       if (isVerticalBounday) {
         changeY *= -1
       }
-      
+
       this.dvdLogoStyle.transform = `translate(${this.posX}px, ${this.posY}px)`
     }, 10)
   }
