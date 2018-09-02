@@ -1,21 +1,43 @@
-# bouncingdvdlogo
+# Bouncing DVD Logo
 
-> Recreate the bouncing DVD logo from The Office: https://www.youtube.com/watch?v=QOtuX0jL85Y
+The objective of this project is to recreate the bouncing DVD logo from the TV show, [The Office (U.S.)](https://www.nbc.com/the-office):
 
-## Build Setup
+https://www.youtube.com/watch?v=QOtuX0jL85Y
 
-``` bash
-# install dependencies
-npm install
+# Demonstration
 
-# serve with hot reload at localhost:8080
-npm run dev
+![Demonstration](./demo.gif)
 
-# build for production with minification
-npm run build
+# Project Setup
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+1. Clone the repository to your local machine:
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+   ```
+   git clone https://github.com/eddylu94/BouncingDvdLogo
+   ```
+
+2. Navigate into the cloned project directory:
+
+   ```
+   cd BouncingDvdLogo
+   ```
+
+3. Install all dependencies:
+
+   ```
+   npm install
+   ```
+
+4. Run the project:
+
+   ```
+   npm start
+   ```
+
+   The console should then print a statement with a URL in which the application is running.
+
+   For example:
+
+   > You application is running here: http://localhost:8080/
+
+6. Launch the application in a web browser by navigating to the URL printed by the console
